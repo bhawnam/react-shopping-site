@@ -1,6 +1,12 @@
 function App() {
   const [melons, setMelons] = React.useState({});
 
+  React.useEffect(() => {
+    fetch("/api/melons")
+    .then((response) => response.json())
+    .then((melonData) => setMelons(melonData));
+    }, [])
+
   return (
     <ReactRouterDOM.BrowserRouter>
       <Navbar logo="/static/img/watermelon.png" brand="Ubermelon">
