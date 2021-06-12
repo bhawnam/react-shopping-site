@@ -144,3 +144,11 @@ function MelonCard(props) {
   );
 }
 
+function Loading() {
+  return (
+    <div className="loading-box">
+      <img src="static/img/watermelon-loading.png" alt="" />
+      <div> Loading... </div>
+    </div>
+  )
+}
