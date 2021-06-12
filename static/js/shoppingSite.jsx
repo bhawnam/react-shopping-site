@@ -46,7 +46,7 @@ function App() {
           <Homepage />
         </ReactRouterDOM.Route>
         <ReactRouterDOM.Route exact path="/shop">
-          <AllMelonsPage melons={melons} />
+          <AllMelonsPage melons={melons} addMelonToCart={addMelonToCart}/>
         </ReactRouterDOM.Route>
         <ReactRouterDOM.Route exact path="/cart">
           <ShoppingCartPage />

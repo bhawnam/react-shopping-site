@@ -22,7 +22,7 @@ function PageContainer(props) {
 }
 
 function AllMelonsPage(props) {
-  const { melons } = props;
+  const { melons, addMelonToCart } = props;
   const melonCards = [];
 
   for (const melon of Object.values(melons)) {
@@ -33,6 +33,7 @@ function AllMelonsPage(props) {
         name={melon.name}
         imgUrl={melon.image_url}
         price={melon.price}
+        handleAddToCart={addMelonToCart}
       />
     );
 
