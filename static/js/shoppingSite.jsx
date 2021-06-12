@@ -49,7 +49,7 @@ function App() {
           <AllMelonsPage melons={melons} addMelonToCart={addMelonToCart}/>
         </ReactRouterDOM.Route>
         <ReactRouterDOM.Route exact path="/cart">
-          <ShoppingCartPage />
+          <ShoppingCartPage cart={shoppingCart} melons={melons} />
         </ReactRouterDOM.Route>
       </div>
     </ReactRouterDOM.BrowserRouter>

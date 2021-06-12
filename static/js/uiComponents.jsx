@@ -47,6 +47,24 @@ function AllMelonsPage(props) {
 }
 
 function ShoppingCartPage(props) {
+  const {cart, melons} = props;
+  
+  const tableData = [];
+  let totalCost = 0;
+
+  for(const melonId in cart){
+    const currentMelon = melons[melonId]
+    const melonCost =  cart[melonId] * currentMelon.price
+    totalCost = totalCost + melonCost
+    tableData.push(
+      <tr key={melonId}>
+        <td> {currentMelon.name} </td>
+        <td> {cart[melonId]} </td>
+        <td> {melonCost.toFixed(2)} </td>
+      </tr> 
+    )
+  }
+
   return (
     <PageContainer title="Shopping Cart" id="shoppingCart">
       <div className="col-6">
@@ -58,9 +76,9 @@ function ShoppingCartPage(props) {
               <th>Total</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>{tableData}</tbody>
         </table>
-        <p className="lead">Total: ${(0).toFixed(2)}</p>
+        <p className="lead">Total: ${totalCost.toFixed(2)}</p>
       </div>
     </PageContainer>
   );
